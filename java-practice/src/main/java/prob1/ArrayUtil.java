@@ -21,9 +21,15 @@ public class ArrayUtil {
 		
 		return a;
 	}
-
+	
 	public static int[] concat(int[] a1, int[] a2) {
-		return null;
+		int addedLength = a1.length + a2.length;
+		int[] rarray = new int[addedLength];
+		for(int i=0; i<a1.length;i++)
+			rarray[i] = a1[i];
+		for(int i=a1.length;i<addedLength;i++)
+			rarray[i] = a2[i-a1.length];
+		return rarray;
 	}
 
 }

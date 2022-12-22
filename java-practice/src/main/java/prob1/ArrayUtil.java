@@ -1,29 +1,41 @@
 package prob1;
 
 public class ArrayUtil {
-
-	public static double[] intToDouble(int[] a) {
-		double[] d = new double[a.length];
+	
+	// 1. int 배열 -> double 배열
+	public static double[] intToDouble(int[] source)  {
+		double[] result = new double[source.length];
 		
-		for(int i = 0; i < d.length; i++) {
-			d[i] = a[i];
+		for (int i = 0; i < source.length; i++) {
+			result[i] = (double) source[i];
+		}
+		return result;
+	}
+	
+	// 2. double 배열 -> int 배열
+	public static int[] doubleToInt(double[] source) {
+		int[] result = new int[source.length];
+		
+		for (int i = 0; i < source.length; i++) {
+			result[i] = (int) source[i];
+		}
+		return result;
+	}
+	
+	// 3. int 배열 연결
+	public static int[] concat(int[] is, int[] is2) {
+		int sumIdx = is.length + is2.length;
+		int[] result = new int[sumIdx];
+		
+		int idx = 0;
+		for (int n : is) {
+			result[idx++] = n;
 		}
 		
-		return d;
-	}
-
-	public static int[] doubleToInt(double[] d) {
-		int[] a = new int[d.length];
-		
-		for(int i = 0; i < a.length; i++) {
-			a[i] = (int)d[i];
+		for (int n : is2) {
+			result[idx++] = n;
 		}
 		
-		return a;
+		return result;
 	}
-
-	public static int[] concat(int[] a1, int[] a2) {
-		return null;
-	}
-
 }

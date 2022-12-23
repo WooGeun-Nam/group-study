@@ -15,5 +15,6 @@
   
    <modules>
    	<module>java-practice</module>
+   	<module>practice-nwg</module>
    </modules>
 </project>

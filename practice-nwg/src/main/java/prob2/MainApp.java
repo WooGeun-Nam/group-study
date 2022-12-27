@@ -1,4 +1,4 @@
-package prob2;
+package prob2; // Stack 만드는 문제
 
 public class MainApp {
 
@@ -27,7 +27,6 @@ public class MainApp {
 		} catch ( MyStackException ex) {
 			System.out.println( ex );
 		}
-
 	}
 
 }

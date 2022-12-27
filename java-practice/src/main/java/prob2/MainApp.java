@@ -11,7 +11,7 @@ public class MainApp {
 			stack.push("java");
 			stack.push(".");
 
-			while (stack.isEmpty() == false) { // 모든 데이터 pop
+			while (stack.isEmpty() == false) {
 				String s = stack.pop();
 				System.out.println( s );
 			}
@@ -24,8 +24,10 @@ public class MainApp {
 			System.out.println(stack.pop());
 			System.out.println(stack.pop());
 			
-		} catch (MyStackException ex) {
+		} catch ( MyStackException ex) {
 			System.out.println( ex );
 		}
+
 	}
+
 }

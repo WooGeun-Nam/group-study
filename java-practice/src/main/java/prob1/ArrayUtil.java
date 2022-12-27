@@ -1,41 +1,35 @@
 package prob1;
 
 public class ArrayUtil {
-	
-	// 1. int 배열 -> double 배열
-	public static double[] intToDouble(int[] source)  {
-		double[] result = new double[source.length];
+
+	public static double[] intToDouble(int[] a) {
+		double[] d = new double[a.length];
 		
-		for (int i = 0; i < source.length; i++) {
-			result[i] = (double) source[i];
+		for(int i = 0; i < d.length; i++) {
+			d[i] = a[i];
 		}
-		return result;
+		
+		return d;
+	}
+
+	public static int[] doubleToInt(double[] d) {
+		int[] a = new int[d.length];
+		
+		for(int i = 0; i < a.length; i++) {
+			a[i] = (int)d[i];
+		}
+		
+		return a;
 	}
 	
-	// 2. double 배열 -> int 배열
-	public static int[] doubleToInt(double[] source) {
-		int[] result = new int[source.length];
-		
-		for (int i = 0; i < source.length; i++) {
-			result[i] = (int) source[i];
-		}
-		return result;
+	public static int[] concat(int[] a1, int[] a2) {
+		int addedLength = a1.length + a2.length;
+		int[] rarray = new int[addedLength];
+		for(int i=0; i<a1.length;i++)
+			rarray[i] = a1[i];
+		for(int i=a1.length;i<addedLength;i++)
+			rarray[i] = a2[i-a1.length];
+		return rarray;
 	}
-	
-	// 3. int 배열 연결
-	public static int[] concat(int[] is, int[] is2) {
-		int sumIdx = is.length + is2.length;
-		int[] result = new int[sumIdx];
-		
-		int idx = 0;
-		for (int n : is) {
-			result[idx++] = n;
-		}
-		
-		for (int n : is2) {
-			result[idx++] = n;
-		}
-		
-		return result;
-	}
+
 }
